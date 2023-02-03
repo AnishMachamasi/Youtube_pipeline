@@ -74,8 +74,11 @@ def download_audio(url, audio_format):
 
 
 def extract_frames(video_name):
-    new_filename = video_name.replace(".webm", "")
-    vid = cv2.VideoCapture("video/"+new_filename)
+    if ".webm" in video_name:
+        new_filename = video_name.replace(".webm", "")
+        vid = cv2.VideoCapture("video/"+new_filename)
+    else:    
+        vid = cv2.VideoCapture("video/"+video_name)
     
     try:
 
