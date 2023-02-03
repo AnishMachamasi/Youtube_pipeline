@@ -4,10 +4,10 @@ import cv2
 def extract_frames(video_name):
     print(video_name)
     # if ".webm" in video_name:
-    new_filename = video_name.replace(".webm", "")
+    # new_filename = video_name.replace(".webm", "")
     # vid = cv2.VideoCapture("video/"+new_filename)
     # else:    
-    vid = cv2.VideoCapture("video/"+new_filename)
+    vid = cv2.VideoCapture("video/"+video_name)
     
     try:
 

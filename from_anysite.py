@@ -9,17 +9,22 @@ video_format = input("Enter the desired video format (e.g. mp4, best, worst, web
 audio_format = input("Enter the desired audio format (e.g. mp3): ")
 
 
-video_name = download_video(url, video_format)
+
+download_video(url, video_format)
+
+
 
 def monitor_pipeline(url, video_name):
     video_file = url.split("/")[-1] + ".mp4"
     if not os.path.exists("video/" + video_name):
         print("Download failed for video:", url)
 
-monitor_pipeline(url, video_name)
+# monitor_pipeline(url, video_name)
 
 download_audio(url, audio_format)
+video_name=input("Please Enter the video name: \n")
 print(video_name)
+
 extract_frames(video_name)
 
 
