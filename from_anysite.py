@@ -23,7 +23,7 @@ def download_video(url, video_format):
     video_name, _ = os.path.splitext(os.path.basename(video_file))
     video_name = video_name.split("-")[0]
     video_name = video_name+".mp4.webm"  
-    print(video_name)
+    # print(video_name)
     return video_name
 
 def download_audio(url, audio_format):
@@ -42,7 +42,7 @@ def download_audio(url, audio_format):
     audio_name, _ = os.path.splitext(os.path.basename(audio_file))
     audio_name = audio_name.split("-")[0]
     audio_name = audio_name + ".mp3"
-    print(audio_name)
+    # print(audio_name)
 
 # def extract_frames(video_name):
 #     # Extract the frames using OpenCV
@@ -74,7 +74,8 @@ def download_audio(url, audio_format):
 
 
 def extract_frames(video_name):
-    vid = cv2.VideoCapture("F:/coderush_assignment/Youtube_pipeline/video/"+video_name)
+    new_filename = video_name.replace(".webm", "")
+    vid = cv2.VideoCapture("video/"+new_filename)
     
     try:
 
@@ -121,6 +122,7 @@ def monitor_pipeline(url, video_name):
 monitor_pipeline(url, video_name)
 
 download_audio(url, audio_format)
+print(video_name)
 extract_frames(video_name)
 
 
