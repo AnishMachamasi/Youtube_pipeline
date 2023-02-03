@@ -1,13 +1,14 @@
 import os
 import subprocess
 import cv2
-def extract_frames(video_name):
-    print(video_name)
+def extract_frames(video_name,_):
+    print("title is"+video_name+"extension is"+ _)
     # if ".webm" in video_name:
     # new_filename = video_name.replace(".webm", "")
     # vid = cv2.VideoCapture("video/"+new_filename)
     # else:    
-    vid = cv2.VideoCapture("video/"+video_name)
+    concatenated_string = video_name + _
+    vid = cv2.VideoCapture("video/"+concatenated_string)
     
     try:
 
