@@ -4,11 +4,13 @@ import subprocess
 import cv2
 
 
-def download_video(url, video_format):
+def download_video(url, video_format="bestvideo+bestaudio"):
     # Download the video using youtube-dl
     
     try:
-        subprocess.check_call(["youtube-dl", "-f",  video_format, "--no-playlist", "--restrict-filenames", "--output",  "video/%(title)s.mp4", url])
+        # subprocess.check_call(["youtube-dl", "-f",  video_format, "--no-playlist", "--restrict-filenames", "--output",  "video/%(title)s.mp4", url])
+        subprocess.check_call(["youtube-dl", "-f", "bestvideo[ext=mp4]+bestaudio[ext=m4a]/bestvideo+bestaudio", "--no-playlist", "--restrict-filenames", "--output", "video/%(title)s.mp4", url])
+
         print("Video downloaded.")
     except subprocess.CalledProcessError as e:
         print("Error in downloading video:", e)
