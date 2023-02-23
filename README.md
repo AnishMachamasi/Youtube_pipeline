@@ -26,3 +26,12 @@ From this file, download file <b>ffmpeg-master-latest-win64-gpl.zip</b>. After d
 path: <b>C:\ffmpeg-master-latest-win64-gpl\bin</b>
 
 note: This package is for windows only.
+
+ 
+NEW:
+ youtube has changed some of its code.
+ now youtube-dl donot work for downloading videos. 
+ Try using yt-dlp.
+
+Install it using:
+ <b>pip install yt-dlp</b>
